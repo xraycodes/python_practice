@@ -44,14 +44,11 @@ for name, artist, year, songs in albums:
     
 print()
 
-album = albums[2]
-print(album)
-
+album = albums[3]
 songs = album[3]
-print(songs)
-
-song = songs[1]
+song = songs[2]
 print(song)
+print(song[1])
 
-title = song[1]
-print(title)
+mayhem = albums[3][3][2][1]
+print(mayhem)
