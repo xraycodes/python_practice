@@ -8,7 +8,7 @@ def palindrome_sentence(sentence):
         if char.isalnum():
             string += char
 
-    return string[::-1].casefold() == string.casefold()
+    return is_palindrome(string)
     
 
 word = input("Whats the word to check? ")
