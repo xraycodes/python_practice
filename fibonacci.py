@@ -13,8 +13,7 @@ def fibonacci(n):
 
     return result
 
-print(fibonacci(-5))
 
-# for i in range(36):
-#     print(i, fibonacci(i))
+for i in range(36):
+    print(i, fibonacci(i))
 
