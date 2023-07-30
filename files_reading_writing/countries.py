@@ -18,11 +18,19 @@ with open(input_filename) as country_file:
         }
         # print(country_dict)
         countries[country.casefold()] = country_dict
+        # code_lookup[code.casefold()] = country
+        countries[code.casefold()] = country_dict
 
+ 
 while True:
     chosen_country = input("What country would you like to know? ").casefold()
     if chosen_country in countries:
         country_data = countries[chosen_country]
-        print(f"The capital of {chosen_country} is {country_data['capital']}")
+        if country_data['capital'] == '':
+            print(f"{chosen_country} does not have a capital city")
+        else:
+            print(f"The capital of {chosen_country} is {country_data['capital']}")
     elif chosen_country == 'quit':
         break
+    else:
+        print("Choose a country")
