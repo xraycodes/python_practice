@@ -1,8 +1,7 @@
 #chipotle online ordering system emulation
 
 #Database
-TAX = 0.13
-user_order = []
+TAX = 1.13
 chosen_food_list = []
 #Dictionary(Key=User_name, Value = Chosen order as a list)
 user_name_order = {}
@@ -35,55 +34,40 @@ food = {'Protein': {
 
 
 #Functions
-def food_iteration(data):
-    if isinstance(data, dict):
-        for index, key in enumerate(data):
+def food_iteration(data, food_type):
+    for index, (key,_) in enumerate(data[food_type].items()):
             print((index + 1), key)
-    if isinstance(data, list):
-        for index, _ in enumerate(data):
-            print((index + 1), _)
+    food_type_list = list(data[food_type].keys())
+    user = int(input(f"What's your choice of {food_type}?(In Numbers): "))
+    print()
+    if 1 <= user <= len(data[food_type]):
+        chosen_food_type = food_type_list[user - 1]
+        user_name_order[chosen_food_type] = food[food_type][chosen_food_type] 
+    else:
+        print('Number out of range, Try again')
 
+def item_price(total=0):
+    for value in user_name_order.values():
+        total += value
+    return round(total * TAX ,2)
 
-def item_price():
-    pass
 
 
 # Main Code
 user_name = input("Who is this order for?: ")
-user_name_order[user_name] = 0
+print(f"Okay! Ordering for {user_name}")
+print()
 
-while True:
-    for index, (key, value) in enumerate(food['Protein'].items()):
-        print(index + 1, key)
-    proteins_list = list(food['Protein'].keys())
-    user = int(input("What's your choice of protein?(In Numbers): "))
-    if 1 <= user <= len(food['Protein']):
-        chosen_protein = proteins_list[user - 1]
-        user_order.append(chosen_protein)
-        user_name_order[chosen_protein] = {'price' : food['Protein'][chosen_protein]}
-    else:
-        print('Number out of range, Try again')
+for key in food.keys():
+    food_iteration(food, key)
 
-    for index, (key, value) in enumerate(food['Rice'].items()):
-        print(index + 1, key)
-    rice_list = list(food['Rice'].keys())
-    user = int(input("What's your choice of rice?(In Numbers): "))
-    if 1 <= user <= len(food['Rice']):
-        chosen_rice = rice_list[user - 1]
-        user_order.append(chosen_rice)
-        user_name_order[chosen_rice] = {'price': food['Rice'][chosen_rice]}
-        break
-    else:
-        print('Number out of range, Try again')
-        break
-
-print(user_name_order)
+order = ''
+for key in user_name_order.keys():
+    order += (key + ', ')
+print(f"The order for {user_name} includes: {order}")
+print(f"The total price is {item_price()}")
 
 
-# food_iteration(protein)
-# protein_choice = int(input("Choose your protein. "))
-# user_order.append(protein[protein_choice - 1])
-# print(f"Adding {protein[protein_choice - 1]}\n")
 
 
 
