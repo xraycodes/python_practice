@@ -13,7 +13,7 @@ def __init__(self, title, artist, duration=0):
     self.duration = duration
 
 
-class Album():
+class Album:
     """Class to represent album,using its track list
     
     Attributes:
@@ -30,7 +30,7 @@ class Album():
     def __init__(self, name, year, artist=None):
         self.name = name
         self.year = year
-        if artist = None:
+        if artist == None:
             self.artist = Artist("Various artist")
         else:
             self.artist = artist 
@@ -46,7 +46,49 @@ class Album():
                 in that track list- inserting between songs if necessary.
                 Otherwise song will be added to end of list.
         """
-        if position = None:
+        if position == None:
             self.tracks.append(song)
         else:
             self.tracks.insert(position, song)
+
+
+class Artist:
+    """Basic class to store artist details
+
+    Attributes: 
+        name (str):  Name of artist
+        albums (list[album]: List of album by artist.
+            List includes only those albums in collection, it is
+            not an exhaustive list of artists published albums
+
+    Methods:
+        add_album: use to add new album to artists albums list
+    """
+    def __init__(self, name):
+        self.name = name
+        self.albums = []
+
+    def add_album(self, album):
+        """Add new album to the list.
+        
+        Args:
+            album (Album): Album object to add to list. 
+                If album already present, not added again.
+        """
+        self.albums.append(album)
+
+
+def load_data():
+    new_artist = None
+    new_album = None
+    artist_list = []
+
+    with open('albums.txt', 'r') as albums:
+        for line in albums:
+            #data row consist of artist, album, year, song
+            artist_field, album_field, year_field, song_field = tuple(line.strip('\n').split('\t'))
+            year_field = int(year_field)
+            print(artist_field, album_field, year_field, song_field)
+
+if __name__ == '__main__':
+    load_data()
