@@ -6,13 +6,11 @@ con = sqlite3.connect('customer.db')
 #creat a cursor 
 c = con.cursor()
 
-many_customers = [
-                ('Wes', 'Brown', 'wes@brown.com'),
-                ('Steph', 'King', 'steph@gmail.com'),
-                ('Dan', 'Hook', 'dannhook@gmail.com'),
-                ]
-
-c.executemany("INSERT INTO customers VALUES (?,?,?)", many_customers)
+#query the DB
+c.execute("SELECT * FROM customers")
+# c.fetchone()   FETCHES LAST ITEM
+# c.fetchmany(3)  FETCHES 3 or desired parameter
+print(c.fetchall())
 
 print('command executed')
 
