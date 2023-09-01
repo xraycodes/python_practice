@@ -7,11 +7,14 @@ con = sqlite3.connect('customer.db')
 c = con.cursor()
 
 #query the DB
-c.execute("SELECT * FROM customers")
-# c.fetchone()   FETCHES LAST ITEM
-# c.fetchmany(3)  FETCHES 3 or desired parameter
-print(c.fetchall())
-
+c.execute("SELECT * FROM customers WHERE last_name LIKE 'Br%'")
+# c.fetchone()   FETCHES FIRST ITEM
+# c.fetchmany(3)  FETCHES first 3 or desired parameter
+# print(c.fetchall())
+# print(c.fetchone())
+v = c.fetchall()
+for items in v:
+   print(items)
 print('command executed')
 
 #Commit our command
