@@ -6,16 +6,18 @@ con = sqlite3.connect('customer.db')
 #creat a cursor 
 c = con.cursor()
 
-#query the DB
-c.execute("SELECT * FROM customers WHERE last_name LIKE 'Br%'")
-# c.fetchone()   FETCHES FIRST ITEM
-# c.fetchmany(3)  FETCHES first 3 or desired parameter
-# print(c.fetchall())
-# print(c.fetchone())
-v = c.fetchall()
-for items in v:
-   print(items)
-print('command executed')
+#update DB
+c.execute("""
+        UPDATE customers SET first_name = 'DOOBY'
+        WHERE rowid = 1
+
+""")
+
+#Query the DB
+c.execute("SELECT rowid, * FROM customers")
+items = c.fetchall()
+for item in items:
+    print(item)
 
 #Commit our command
 con.commit()
