@@ -49,3 +49,16 @@ while max(players_scores) < max_score:
 max_score = max(players_scores)
 winning_idx = players_scores.index(max_score)
 print(f"The winner is player {winning_idx + 1} with score of {max_score}")
+
+
+# If more than 1 player has the max score by the end
+
+# winners = []
+# for i, score in enumerate(players_scores):
+#     if score == winning_score:
+# #         winners.append(i + 1)
+
+# if len(winners) == 1:
+#     print(f"The winner is player {winners[0]} with a score of {winning_score}")
+# else:
+#     print(f"It's a tie! Players {', '.join(map(str, winners))} have tied with a score of {winning_score}")
