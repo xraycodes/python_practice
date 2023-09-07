@@ -46,6 +46,6 @@ for word in story_list:
     if word in replacement_words:
         input_replacement = input(f"\nWhat word would you like to replace {word} with ")
         if word in story_list:
-            word = input_replacement
+            story = story.replace(word, input_replacement)
    
-print(story_list)
+print(f'\n {story}')
