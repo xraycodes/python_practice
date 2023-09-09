@@ -1,6 +1,13 @@
-se = {'hi','bye','do'}
-pe = {'hi', 'do', 'bye'}
+MAX = 100
 
-numbers =  {'hi','bye','do'}
+for number in range(1,MAX):
+    guess = input("What's the next number? ")
+    if number %3 == 0:
+        if guess != 'c':
+            break
+    elif guess == str(number):
+        continue
+    else:
+        break
 
-print(numbers.pop())
+print('You lose')
