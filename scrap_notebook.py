@@ -1,13 +1,7 @@
-MAX = 100
-
-for number in range(1,MAX):
-    guess = input("What's the next number? ")
-    if number %3 == 0:
-        if guess != 'c':
-            break
-    elif guess == str(number):
-        continue
+for i in range(10):
+    guess = input('wat')
+    if i == 1:
+        if guess == 1:
+            continue
     else:
-        break
-
-print('You lose')
+        print('wag')
