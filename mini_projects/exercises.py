@@ -1,14 +1,13 @@
-#Create a program that asks the user for a number and then prints out a list of all the divisors of that number.
-#For example, 13 is a divisor of 26 because 26 / 13 has no remainder.)
+# write a program that returns 
+# a list that contains only the elements that are common 
+# between the lists (without duplicates). Make sure your program works on two lists of different sizes.
 
+a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 
-userNumber = int(input("Choose a number "))
+common_number = set()
+for number in a:
+    if number in b:
+        common_number.add(number)
 
-numbers = list(range(1,userNumber + 1))
-divisors = []
-
-for number in numbers:
-    if userNumber % number == 0:
-        divisors.append(number)
-
-print(divisors)
+print(common_number)
