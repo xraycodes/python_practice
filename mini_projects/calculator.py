@@ -1,4 +1,5 @@
 OPERATOR = ["+", "-", "*", "/"]
+currentValue = 0
 #function that takes in operator as parameter, and 2 number inputs
 
 def calculation(num1, num2, operator):
@@ -10,7 +11,7 @@ def calculation(num1, num2, operator):
         return num1 * num2
     elif operator == '/':
         if num2 == 0:
-            return "Unable to divide by 0"
+            return 0
         return num1 / num2
 
 def choose_operator():
@@ -50,6 +51,8 @@ while True:
 
 operator = choose_operator()
 answer = calculation(firstOperand, secondOperand, operator)
-
-#result output
-print(answer)
+if answer == 0:
+    print("Unable to divide number by 0")
+else:
+    currentValue += answer
+    print(answer)
