@@ -1,0 +1,38 @@
+
+top = [" ", " ", " "]
+middle = [" ", " ", " "]
+bottom = [" ", " ", " "]
+players = ['player1', 'player2']
+player1 = 'X'
+player2 = 'O'
+
+board = f"{top}\n\n{middle}\n\n{bottom}"
+
+
+
+while True:
+    for i in players:
+        print(i)
+        if i == 'player1':
+            print(f"{i} turn")
+            row = int(input("For row, 0 for top, 1 for middle, 2 for bottom "))
+            column = int(input("For column, 0 for left, 1 for middle, 2 for right "))
+            
+            if row == 0:
+                top[column] = 'X'
+            
+        if i == 'player2':
+            print(f"{i} turn")
+            row = int(input("For row, 0 for top, 1 for middle, 2 for bottom "))
+            column = int(input("For column, 0 for left, 1 for middle, 2 for right "))
+            
+            if row == 0:
+                top[column] = 'O'
+        
+        board = f"{top}\n\n{middle}\n\n{bottom}"
+        print(board)
+    
+                
+       
+    
+    
