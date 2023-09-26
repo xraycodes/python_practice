@@ -1,38 +1,58 @@
-
+# Online Python compiler (interpreter) to run Python online.
+# Write Python 3 code in this online editor and run it.
 top = [" ", " ", " "]
 middle = [" ", " ", " "]
 bottom = [" ", " ", " "]
 players = ['player1', 'player2']
 player1 = 'X'
 player2 = 'O'
+count = 0
+Game = False
 
-board = f"{top}\n\n{middle}\n\n{bottom}"
+def winTiles():
+    if top[0] == top[1] == top[2] or middle[0] == middle[1] == middle[2] or bottom[0] == bottom[1] == bottom[2]:
+        return 'You win'
 
-
-
-while True:
+while Game == False:
+    count += 1
     for i in players:
-        print(i)
         if i == 'player1':
-            print(f"{i} turn")
+            print(f"{i} {player1} turn")
             row = int(input("For row, 0 for top, 1 for middle, 2 for bottom "))
             column = int(input("For column, 0 for left, 1 for middle, 2 for right "))
             
             if row == 0:
                 top[column] = 'X'
+            if row == 1:
+                middle[column] = 'X'
+            if row == 2:
+                bottom[column] = 'X'
+                
+        if count >= 3:
+            winner = winTiles()
+            if winner == 'You win':
+                print("Player 1 wins")
+                Game = True
+                break
             
         if i == 'player2':
-            print(f"{i} turn")
+            print(f"{i} {player2} turn")
             row = int(input("For row, 0 for top, 1 for middle, 2 for bottom "))
             column = int(input("For column, 0 for left, 1 for middle, 2 for right "))
             
             if row == 0:
                 top[column] = 'O'
+            if row == 1:
+                middle[column] = 'O'
+            if row == 2:
+                bottom[column] = 'O'
+            
+        if count >= 3:
+            winner = winTiles()
+            if winner == 'You win':
+                print("Player 2 wins")
+                Game = True
+                break
         
         board = f"{top}\n\n{middle}\n\n{bottom}"
         print(board)
-    
-                
-       
-    
-    
