@@ -118,4 +118,30 @@ def remove_dots(str):
 def count(word):
     new = word.split('-')
     return len(new)
+
+################
+# Two strings are anagrams if you can make one from the other by rearranging the letters.
+
+# Write a function named is_anagram that takes two strings as its parameters. 
+# Your function should return True if the strings are anagrams, and False otherwise.
+
+# For example, the call is_anagram("typhoon", "opython") should return True 
+# while the call is_anagram("Alice", "Bob") should return False.
+
+def is_anagram(str1, str2):
+    if sorted(str1) == sorted(str2):
+        return True
+    else:
+        return False
     
+################
+# Divisible by 3
+# Define a function named div_3 that returns True if its single integer parameter is divisible by 3 and False otherwise.
+
+# For example, div_3(6) is True because 6/3 does not leave any remainder. However div_3(5) is False because 5/3 leaves 2 as a remainder.
+
+def div_3(num):
+    if num % 3 == 0:
+        return True
+    else:
+        return False
