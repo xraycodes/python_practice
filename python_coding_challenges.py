@@ -145,3 +145,17 @@ def div_3(num):
         return True
     else:
         return False
+    
+###############
+# Define a function named all_equal that takes a list and checks whether all elements in the list are the same.
+
+# For example, calling all_equal([1, 1, 1]) should return True.
+def all_equal(list):
+    n = []
+    for i in list:
+        n.append(i)
+        if i != n[0]:
+            return False
+    return True
+        
+print(all_equal([1,1,1]))
