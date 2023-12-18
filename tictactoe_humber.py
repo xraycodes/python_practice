@@ -1,6 +1,6 @@
-top = ["", " ", " "]
-middle = [" ", " ", " "]
-bottom = [" ", " ", " "]
+top = ["", "", ""]
+middle = ["", "", ""]
+bottom = ["", "", ""]
 players = ['player1', 'player2']
 player1 = 'X'
 player2 = 'O'

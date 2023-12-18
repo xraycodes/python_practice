@@ -105,7 +105,6 @@ def see_month_finance():
     print(c.fetchall())
 
 
-
 #Main Code
 
 while True:
