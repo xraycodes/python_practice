@@ -246,6 +246,7 @@ def zap(a, b):
         result.append((a[_],b[_]))
     return result
 
+
 # Min-maxing
 # Define a function named largest_difference that takes a list of numbers as its only parameter.
 
@@ -258,3 +259,14 @@ def largest_difference(numb):
     maxs = max(numb)
     mins = min(numb)
     return (maxs - mins)
+
+##############
+# Up and down
+# Define a function named up_down that takes a single number as its parameter. 
+# Your function return a tuple containing two numbers; the first should be one lower than the parameter,
+#  and the second should be one higher.
+
+# For example, calling up_down(5) should return (4, 6).
+def up_down(number):
+    return (number - 1, number + 1)
+
