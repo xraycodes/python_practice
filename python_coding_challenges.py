@@ -53,13 +53,9 @@ def online_count(dictionary):
 
 # For example, calling only_ints(1, 2) should return True, while calling only_ints("a", 1) should return False.
 
-def only_ints(x,y):
-    if (isinstance(x, int) and isinstance(y,int)):
-        return True
-    else:
-        return False
+def only_ints(x, y):
+    return type(x) == int and type(y) == int
         
-print(only_ints(1,True))
 
 ################
 # Double letters   
