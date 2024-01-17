@@ -336,11 +336,10 @@ def sum_double(a, b):
 
 # The function should return the price of the item after the discount has been applied. 
 # For example, if the price is 100 and the discount is 20, the function should return 80.
-
 def discount(n1,n2):
     return (n1 -(n1*(n2/100)))
     
-print(int(discount(100,20)))
+print(int(discount(120,55)))
   
 
 
