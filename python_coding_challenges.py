@@ -328,6 +328,7 @@ def sum_double(a, b):
     sum = sum * 2
   return sum
 
+
 ##############
 # Give me the discount
 # Create a function in Python that accepts two parameters. 
